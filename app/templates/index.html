@@ -17,6 +17,14 @@
         </form>
     </div>
 </section>
+<section id="topic">
+    <h1>testes
+        
+    </h1>
+    <h2>{{ user.first_name }}</h2>
+    <h2>{{ user.last_name }}</h2>
+    <h2>{{ user.username }}</h2>
+</section>
 <section id="topic" class="wrap">
     <div class="section-title-wrap">
         <h4 class="section-title">Serviços Verificados</h4>
@@ -206,7 +214,7 @@
         <p>O <strong>SASPP</strong> fornece dados como a quantidade de avaliações e a 
             média de cada serviço, ajudando gestores e administradores 
             a priorizarem melhorias.</p>
-        <a href="" class="btn">Contacte-Nos</a>
+        <a href="{% url 'signup2' %}" class="btn">Criar uma conta Empresa</a>
     </div>
     <div class="right">
         <dotlottie-player

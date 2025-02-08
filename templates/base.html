@@ -46,6 +46,15 @@
                 <li><a href="">Serviços</a></li>
                 <li><a href="">Sobre</a></li>
                 <li><a href="">Contacto</a></li>
+                {% if user.is_company == False %}
+                    <li><a href="#">Perfil</a></li>
+                {% endif %}
+                {% if user.is_company == True %}
+                    <li><a href="#">Dashboard</a></li>
+                {% endif %}
+                {% if user %}
+                    <li><a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                {% endif %}
             </ul>
         </nav>
         <label for="nav_check" class="hamburger">
