@@ -42,9 +42,9 @@
                 <a href="{% url 'index' %}"><img src="{% static 'img/saspp-white.png' %}" alt="SASPP"></a>
             </div>
             <ul>
-                <li><a href="">Página Inicial</a></li>
+                <li><a href="{% url 'index' %}">Página Inicial</a></li>
                 <li><a href="">Serviços</a></li>
-                <li><a href="">Sobre</a></li>
+                <li><a href="{% url 'sobre' %}">Sobre</a></li>
                 <li><a href="">Contacto</a></li>
                 {% if user.is_company == False %}
                     <li><a href="#">Perfil</a></li>

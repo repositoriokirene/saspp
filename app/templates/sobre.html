@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}{% endblock%}
+
+{% block title %}Sobre{% endblock %}
+
+{% block content %}
+
+<section id="hero" class="hero">
+    <div class="container">
+        <div class="info">
+            <h1>Dê sua nota aos serviços e contribua para a melhoria contínua</h1>
+            <h2>Suas experiências importam</h2>
+        </div>
+        <form method="post" class="search-bar">
+            <input type="text" name="q" placeholder="Pesquisar Serviço ou Categoria">
+            <button class="desktop">Pesquisar</button>
+            <button class="mobile"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+</section>
+<section id="topic" class="wrap">
+    <h1>testando</h1>
+</section>
+{% endblock %}
