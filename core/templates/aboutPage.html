@@ -1,0 +1,143 @@
+{% extends 'template.html' %}
+
+{% block title %}Sobre Nós{% endblock %}
+
+{% block nav_sn %}active{% endblock %}
+
+{% block page %}
+<!-- About Page -->
+<div id="about">
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Sobre o SASPP</h1>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Nossa missão é capacitar consumidores e impulsionar negócios através de avaliações transparentes.</p>
+                </div>
+                
+                <div class="mb-16">
+                    <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+                        <div class="md:w-1/2">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Nossa História</h2>
+                            <p class="text-gray-600 mb-4">Fundado em 2023, o SASPP nasceu da frustração de não encontrar informações confiáveis sobre serviços e empresas. Nosso fundador, após uma experiência péssima com um serviço de telecomunicações, decidiu criar uma plataforma onde consumidores pudessem compartilhar suas experiências de forma transparente.</p>
+                            <!--<p class="text-gray-600">Hoje, somos a maior plataforma de avaliações de serviços do Brasil, com mais de 1 milhão de avaliações e 50 mil empresas cadastradas.</p>-->
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="bg-gray-100 rounded-lg overflow-hidden aspect-video flex items-center justify-center">
+                                <i class="fas fa-history text-5xl text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-12">
+                        <div class="md:w-1/2">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Como Funciona</h2>
+                            <p class="text-gray-600 mb-4">Nossa plataforma conecta consumidores e empresas através de avaliações verificadas. Utilizamos tecnologia avançada para detectar e remover avaliações falsas, garantindo que apenas experiências reais sejam publicadas.</p>
+                            <p class="text-gray-600">Empresas podem responder às avaliações e melhorar seus serviços com base no feedback recebido, enquanto consumidores tomam decisões mais informadas.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="bg-gray-100 rounded-lg overflow-hidden aspect-video flex items-center justify-center">
+                                <i class="fas fa-cogs text-5xl text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/2">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Nossos Valores</h2>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="bg-blue-100 text-blue-700 rounded-full p-2 mr-3">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium text-gray-900">Transparência</h3>
+                                        <p class="text-gray-600">Publicamos todas as avaliações, boas e más, desde que sigam nossas diretrizes.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-blue-100 text-blue-700 rounded-full p-2 mr-3">
+                                        <i class="fas fa-balance-scale"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium text-gray-900">Imparcialidade</h3>
+                                        <p class="text-gray-600">Não aceitamos pagamento para alterar ou remover avaliações.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-blue-100 text-blue-700 rounded-full p-2 mr-3">
+                                        <i class="fas fa-user-shield"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium text-gray-900">Proteção</h3>
+                                        <p class="text-gray-600">Protegemos a privacidade de nossos usuários e combatemos avaliações falsas.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="bg-gray-100 rounded-lg overflow-hidden aspect-video flex items-center justify-center">
+                                <i class="fas fa-heart text-5xl text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-8 mb-16">
+                    <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">Nossa Equipe</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+                            <div class="w-24 h-24 mx-auto rounded-full bg-blue-100 flex items-center justify-center text-blue-700 text-3xl mb-4">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Kienda Paulo</h3>
+                            <p class="text-blue-700 mb-2">CEO & Fundador</p>
+                            <p class="text-gray-600 text-sm">Visionário por trás da plataforma, com mais de 3 anos de experiência em tecnologia e atendimento ao consumidor.</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+                            <div class="w-24 h-24 mx-auto rounded-full bg-blue-100 flex items-center justify-center text-blue-700 text-3xl mb-4">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Emirene Pires</h3>
+                            <p class="text-blue-700 mb-2">Diretora de Operações</p>
+                            <p class="text-gray-600 text-sm">Responsável pela qualidade das avaliações e experiência do usuário.</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+                            <div class="w-24 h-24 mx-auto rounded-full bg-blue-100 flex items-center justify-center text-blue-700 text-3xl mb-4">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Marinácio Hulu</h3>
+                            <p class="text-blue-700 mb-2">CTO</p>
+                            <p class="text-gray-600 text-sm">Líder da equipe de tecnologia, responsável por liderar a inovação tecnológica da plataforma.</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+                            <div class="w-24 h-24 mx-auto rounded-full bg-blue-100 flex items-center justify-center text-blue-700 text-3xl mb-4">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Lourivaldo King</h3>
+                            <p class="text-blue-700 mb-2">Director de Marketing</p>
+                            <p class="text-gray-600 text-sm">Responsável pelas estratégias de comunicação e crescimento da marca.</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+                            <div class="w-24 h-24 mx-auto rounded-full bg-blue-100 flex items-center justify-center text-blue-700 text-3xl mb-4">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Ricardo Tavares</h3>
+                            <p class="text-blue-700 mb-2">Desenvolvedor de Software</p>
+                            <p class="text-gray-600 text-sm">Responsável pela criação e manutenção de funcionalidades que garantem a melhor experiência para os usuários.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Junte-se a nós</h2>
+                    <p class="text-gray-600 mb-6">Estamos sempre em busca de talentos para fazer parte do nosso time e ajudar a melhorar a experiência dos consumidores.</p>
+                    <a href="#" class="inline-block bg-blue-700 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition">
+                        Ver vagas disponíveis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,146 @@
+{% extends 'template.html' %}
+
+{% block title %}Contacto{% endblock %}
+
+{% block nav_ct %}active{% endblock %}
+
+{% block page %}
+<!-- Contact Page -->
+<div id="contact">
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Entre em Contato</h1>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Tem dúvidas, sugestões ou precisa de ajuda? Nossa equipe está aqui para ajudar.</p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="gradient-bg text-white py-4 px-6">
+                                <h2 class="text-xl font-bold">Envie-nos uma mensagem</h2>
+                            </div>
+                            <div class="p-6">
+                                <form id="contactForm">
+                                    <div class="mb-6">
+                                        <label class="block text-gray-700 font-medium mb-2" for="name">Seu nome</label>
+                                        <input type="text" id="name" name="name" 
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-700 focus:border-transparent">
+                                    </div>
+                                    
+                                    <div class="mb-6">
+                                        <label class="block text-gray-700 font-medium mb-2" for="email">E-mail</label>
+                                        <input type="email" id="email" name="email" 
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-700 focus:border-transparent">
+                                    </div>
+                                    
+                                    <div class="mb-6">
+                                        <label class="block text-gray-700 font-medium mb-2" for="subject">Assunto</label>
+                                        <select id="subject" name="subject" 
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-700 focus:border-transparent">
+                                            <option value="">Selecione um assunto</option>
+                                            <option value="support">Suporte técnico</option>
+                                            <option value="business">Parcerias comerciais</option>
+                                            <option value="press">Imprensa</option>
+                                            <option value="other">Outro</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="mb-6">
+                                        <label class="block text-gray-700 font-medium mb-2" for="message">Mensagem</label>
+                                        <textarea id="message" name="message" rows="5" 
+                                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"></textarea>
+                                    </div>
+                                    
+                                    <button type="submit" class="w-full bg-blue-700 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition">
+                                        Enviar mensagem
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+                            <div class="gradient-bg text-white py-4 px-6">
+                                <h2 class="text-xl font-bold">Informações de contato</h2>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-start mb-6">
+                                    <div class="bg-blue-100 text-blue-700 rounded-full p-3 mr-4">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-gray-900 mb-1">Endereço</h3>
+                                        <p class="text-gray-600">Luanda, Belas<br>Centralidade do Kilamba</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start mb-6">
+                                    <div class="bg-blue-100 text-blue-700 rounded-full p-3 mr-4">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-gray-900 mb-1">E-mail</h3>
+                                        <p class="text-gray-600">contact@saspp.ao</p>
+                                        <p class="text-gray-600">suport@saspp.ao</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-blue-100 text-blue-700 rounded-full p-3 mr-4">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-gray-900 mb-1">Telefone</h3>
+                                        <p class="text-gray-600">+244 923 000 000</p>
+                                        <p class="text-gray-600">+244 923 000 000 (WhatsApp)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="gradient-bg text-white py-4 px-6">
+                                <h2 class="text-xl font-bold">Perguntas frequentes</h2>
+                            </div>
+                            <div class="p-6">
+                                <div class="accordion-item mb-4 border-b border-gray-200 pb-4">
+                                    <button class="accordion-button flex justify-between items-center w-full text-left font-medium text-gray-900">
+                                        <span>Como faço para avaliar uma empresa?</span>
+                                        <i class="fas fa-chevron-down text-blue-700 transition-transform"></i>
+                                    </button>
+                                    <div class="accordion-content hidden mt-2 text-gray-600">
+                                        <p>Basta clicar no botão "Avaliar Serviço" no menu superior, buscar pela empresa e preencher o formulário com sua experiência. Sua avaliação será publicada após nossa verificação.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item mb-4 border-b border-gray-200 pb-4">
+                                    <button class="accordion-button flex justify-between items-center w-full text-left font-medium text-gray-900">
+                                        <span>Minha avaliação não apareceu no site. O que aconteceu?</span>
+                                        <i class="fas fa-chevron-down text-blue-700 transition-transform"></i>
+                                    </button>
+                                    <div class="accordion-content hidden mt-2 text-gray-600">
+                                        <p>Todas as avaliações passam por um processo de verificação para garantir autenticidade. Se sua avaliação não violou nossas diretrizes, ela deve aparecer em até 48 horas. Caso contrário, você receberá um e-mail explicando o motivo.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <button class="accordion-button flex justify-between items-center w-full text-left font-medium text-gray-900">
+                                        <span>Como minha empresa pode responder às avaliações?</span>
+                                        <i class="fas fa-chevron-down text-blue-700 transition-transform"></i>
+                                    </button>
+                                    <div class="accordion-content hidden mt-2 text-gray-600">
+                                        <p>Empresas podem se cadastrar em nosso programa para empresas, que permite responder avaliações, acessar análises e melhorar seu serviço com base no feedback. Entre em contato conosco para mais informações.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

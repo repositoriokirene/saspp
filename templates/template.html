@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - SASPP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/icon.ico' %}" type="image/x-icon">
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="{% url 'index' %}"><img class="w-40" src="{% static 'img/saspp-blue.png' %}" alt="SASPP"></a>
+                <!--<i class="fas fa-star text-blue-700 text-2xl"></i>
+                <span class="text-xl font-bold text-blue-700">SASPP</span>
+                -->
+            </div>
+            
+            <nav class="hidden lg:flex space-x-8">
+                <a href="{% url 'index' %}" class="nav-link {% block nav_pi %}{% endblock %}">Página Inicial</a>
+                <a href="{% url 'services_page' %}" class="nav-link {% block nav_as %}{% endblock %}">Avaliar Serviço</a>
+                <a href="{% url 'about_page' %}" class="nav-link {% block nav_sn %}{% endblock %}">Sobre Nós</a>
+                <a href="{% url 'contact_page' %}" class="nav-link {% block nav_ct %}{% endblock %}">Contato</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+            {% if not isAuthenticated %}
+                <a href="{% url 'login_page' %}" class="hidden md:block nav-link">Entrar</a>
+                <a href="{% url 'signup_page' %}" class="hidden md:block bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition nav-link">
+                    Criar conta
+                </a>
+            {% else %}
+                <a href="#" class="bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Logout</a>
+            {% endif %}
+                <button class="md:hidden text-gray-600" id="mobileMenuButton">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white shadow-md" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="{% url 'index' %}" class="nav-link py-2">Início</a>
+                <a href="{% url 'review_page' %}" class="nav-link py-2">Avaliar Serviço</a>
+                <a href="{% url 'about_page' %}" class="nav-link py-2">Sobre Nós</a>
+                <a href="{% url 'contact_page' %}" class="nav-link py-2">Contato</a>
+                <div class="border-t border-gray-200 pt-3">
+                    {% if not isAuthenticated %}
+                        <a href="{% url 'login_page' %}" class="nav-link py-2 block">Entrar</a>
+                        <a href="{% url 'login_page' %}" class="nav-link py-2 block">Criar Conta</a>
+                    {% else %}
+                        <a href="#" class="bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Logout</a>
+                    {% endif %}
+                    <!--<button class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-md transition w-full nav-link">
+                        Criar conta
+                    </button>-->
+                </div>
+            </div>
+        </div>
+    </header>
+    {% block page %}{% endblock %}
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <a href="{% url 'index' %}">
+                            <i class="fas fa-star text-2xl star-rating"></i>
+                            <span class="text-xl font-bold text-white">SASPP</span>
+                        </a>
+                    </div>
+
+                    <p class="mb-4">A plataforma de avaliações mais confiável de Angola.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-medium text-lg mb-4">Consumidores</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition nav-link" data-page="evaluation">Avaliar serviço</a></li>
+                        <li><a href="#" class="hover:text-white transition">Buscar empresas</a></li>
+                        <li><a href="#" class="hover:text-white transition">Guia do consumidor</a></li>
+                        <li><a href="#" class="hover:text-white transition">Perguntas frequentes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-medium text-lg mb-4">Empresas</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Cadastrar empresa</a></li>
+                        <li><a href="#" class="hover:text-white transition">Soluções para empresas</a></li>
+                        <li><a href="#" class="hover:text-white transition">Gerenciar avaliações</a></li>
+                        <li><a href="#" class="hover:text-white transition">Recursos para negócios</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-medium text-lg mb-4">Sobre Nós</h3>
+                    <ul class="space-y-2">
+                        <li><a href="{% url 'about_page' %}" class="hover:text-white transition">Nossa história</a></li>
+                        <li><a href="#" class="hover:text-white transition">Como funciona</a></li>
+                        <li><a href="#" class="hover:text-white transition">Trabalhe conosco</a></li>
+                        <li><a href="{% url 'contact_page' %}" class="hover:text-white transition" >Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="mb-4 md:mb-0">© 2025 SASPP. Todos os direitos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition">Termos de uso</a>
+                    <a href="#" class="hover:text-white transition">Política de privacidade</a>
+                    <a href="#" class="hover:text-white transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-700 text-white w-12 h-12 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
