@@ -14,10 +14,11 @@
                 </div>
                 
                 <div class="p-8">
-                    <form id="loginForm">
+                    <form id="loginForm"  method="POST">
+                        {% csrf_token %}
                         <div class="mb-6">
-                            <label class="block text-gray-700 font-medium mb-2" for="login_email">E-mail</label>
-                            <input type="email" id="login_email" name="email" 
+                            <label class="block text-gray-700 font-medium mb-2" for="login_username">E-mail ou Número</label>
+                            <input type="text" id="login_username" name="username" 
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-700 focus:border-transparent">
                         </div>
                         
@@ -26,7 +27,7 @@
                             <input type="password" id="login_password" name="password" 
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-700 focus:border-transparent">
                             <div class="flex justify-end mt-2">
-                                <a href="#" class="text-sm text-blue-700 hover:underline">Esqueceu sua senha?</a>
+                                <a href="{% url 'password_reset_request' %}" class="text-sm text-blue-700 hover:underline">Esqueceu sua senha?</a>
                             </div>
                         </div>
                         

@@ -28,13 +28,13 @@
                 <a href="{% url 'contact_page' %}" class="nav-link {% block nav_ct %}{% endblock %}">Contato</a>
             </nav>
             <div class="flex items-center space-x-4">
-            {% if not isAuthenticated %}
+            {% if not user.is_authenticated %}
                 <a href="{% url 'login_page' %}" class="hidden md:block nav-link">Entrar</a>
                 <a href="{% url 'signup_page' %}" class="hidden md:block bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition nav-link">
                     Criar conta
                 </a>
             {% else %}
-                <a href="#" class="bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Logout</a>
+                <a href="{% url 'logout' %}" class="bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Logout</a>
             {% endif %}
                 <button class="md:hidden text-gray-600" id="mobileMenuButton">
                     <i class="fas fa-bars text-xl"></i>
@@ -50,11 +50,11 @@
                 <a href="{% url 'about_page' %}" class="nav-link py-2">Sobre Nós</a>
                 <a href="{% url 'contact_page' %}" class="nav-link py-2">Contato</a>
                 <div class="border-t border-gray-200 pt-3">
-                    {% if not isAuthenticated %}
+                    {% if not user.is_authenticated %}
                         <a href="{% url 'login_page' %}" class="nav-link py-2 block">Entrar</a>
-                        <a href="{% url 'login_page' %}" class="nav-link py-2 block">Criar Conta</a>
+                        <a href="{% url 'signup_page' %}" class="nav-link py-2 block">Criar Conta</a>
                     {% else %}
-                        <a href="#" class="bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Logout</a>
+                        <a href="{% url 'logout' %}" class="bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Logout</a>
                     {% endif %}
                     <!--<button class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-md transition w-full nav-link">
                         Criar conta
@@ -63,7 +63,9 @@
             </div>
         </div>
     </header>
-    {% block page %}{% endblock %}
+    {% include 'components/toast.html' %}
+    {% block page %}
+    {% endblock %}
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
         <div class="container mx-auto px-4">

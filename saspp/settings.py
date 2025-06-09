@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -72,6 +73,13 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# Authentication backends
+
+AUTHENTICATION_BACKENDS = [
+    'accounts.backends.EmailOrPhoneBackend',
+    'django.contrib.auth.backends.ModelBackend',  # Backup
+]
+
 
 
 # Password validation
@@ -120,3 +128,19 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.Accounts'
+
+# Messages tags
+'''
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+	messages.SUCCESS: 'alert-success',
+	messages.ERROR: 'alert-danger',
+}
+
+'''
+# Redirect
+
+LOGIN_URL='/a/login/'
+LOGIN_REDIRECT_URL='/a/login/'

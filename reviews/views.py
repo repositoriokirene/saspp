@@ -5,6 +5,5 @@ from django.shortcuts import render
 def ServicePage(request):
     return render(request, 'servicePage.html')
 
-
 def ServicesPage(request):
     return render(request, 'servicesPage.html')
